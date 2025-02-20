@@ -52,30 +52,34 @@ while y != x: # Evalúa si el input del usuario es diferente al numero secreto, 
 
 print("¡Has acertado el número!")        
 
-if counter == 1 and difficulty == 1:
-    print("Wow, ¡a la primera! a eso le llamo yo tener suerte")
-    if counter < 5:
+if difficulty == 1:
+    if counter == 1:
+        print("Wow, ¡a la primera! a eso le llamo yo tener suerte")
+    elif counter < 5:
         print(f"Genial, solo has tenido {counter} intentos")
     else:
         print(f"{counter} intentos, mmm, juega a otra cosa")
 
-if counter == 1 and difficulty == 2:
-    print("Wow, ¡a la primera! a eso le llamo yo tener suerte")
-    if counter < 5 and difficulty == 2:
+if difficulty == 2:
+    if counter == 1:
+        print("Wow, ¡a la primera! a eso le llamo yo tener suerte")
+    elif counter < 5 and difficulty == 2:
         print(f"Genial, solo has tenido {counter} intentos")
     else:
         print(f"{counter} intentos, mmm, juega a otra cosa")
 
-if counter == 1 and difficulty == 3:
-    print("WHAAAAAAAAAAAAAAT!")
-    if counter < 10 and difficulty == 3:
+if difficulty == 3:
+    if counter == 1:
+        print("WHAAAAAAAAAAAAAAT!")  
+    elif counter < 10 and difficulty == 3:
         print(f"Genial, solo has tenido {counter} intentos")
     else:
         print(f"{counter} intentos, mmm, juega a otra cosa")
 
-if counter == 1 and difficulty == 4:
-    print("IMPOSSIBLE!!! (Las probabilidades de que este mensaje aparezca son 1 en 1.000.000)")
-    if counter < 100 and difficulty == 4:
+if difficulty == 4:
+    if counter == 1:
+        print("IMPOSSIBLE!!! (Las probabilidades de que este mensaje aparezca son 1 en 1.000.000)")
+    elif counter < 100 and difficulty == 4:
         print(f"Genial, solo has tenido {counter} intentos")
     else:
         print(f"{counter} intentos, no tienes nada mejor que hacer?")
