@@ -4,9 +4,12 @@ x, y, counter = 0, 0, 1 # Variables y = input de usuario, counter = contador de 
 
 print("Bienvenido a Adivina el número. ¿Cuál dificultad deseas?\n\t 1-Fácil (1-10)\n\t 2-Medio (1-50)\n\t 3-Difícil (1-100)\n\t 4-GOAT (1-1.000.000)")
 
-while True: # Bucle para verificar que la seleccion de dificultad se hace correctamente.
-    try:    # Intenta convertir el input del usuario a numero entero.
+while True:                         # Bucle para verificar que la seleccion de dificultad se hace correctamente.
+    try:                            # Intenta convertir el input del usuario a numero entero.
         difficulty = int(input())
+        if difficulty < 1 or difficulty > 4:
+            print("Introduce una de las 4 opciones disponibles")
+            continue
         break                       # Si se cumple, el bucle se rompe.
     except ValueError:              # Si no, se reinicia.
         print("Por favor, selecciona la dificultad ingresando uno de los números correspondientes a cada cual")
@@ -14,12 +17,16 @@ while True: # Bucle para verificar que la seleccion de dificultad se hace correc
 # Una suite de condicionales que evaluan el valor de la dificultad y generan un numero al azar basado en ella.
 if difficulty == 1: 
     x = random.randint(1, 10)
+    print("Haz seleccionado la dificultad fácil")
 elif difficulty == 2:
     x = random.randint(1, 50)
+    print("Haz seleccionado la dificultad media")
 elif difficulty == 3:
     x = random.randint(1, 100)
+    print("Haz seleccionado la dificultad difícil")
 elif difficulty == 4:
-    x = random.randint(1, 1_000_000)     
+    x = random.randint(1, 1_000_000)
+    print("Haz seleccionado la dificultad GOAT")   
 
 print("¡Intenta adivinar el número!")
 
@@ -47,28 +54,28 @@ print("¡Has acertado el número!")
 
 if counter == 1 and difficulty == 1:
     print("Wow, ¡a la primera! a eso le llamo yo tener suerte")
-elif counter < 5 and difficulty == 1:
-    print(f"Genial, solo has tenido {counter} intentos")
-elif counter > 5 and difficulty == 1:
-    print(f"{counter} intentos, mmm, juega a otra cosa")
+    if counter < 5:
+        print(f"Genial, solo has tenido {counter} intentos")
+    else:
+        print(f"{counter} intentos, mmm, juega a otra cosa")
 
-elif counter == 1 and difficulty == 2:
+if counter == 1 and difficulty == 2:
     print("Wow, ¡a la primera! a eso le llamo yo tener suerte")
-elif counter < 5 and difficulty == 2:
-    print(f"Genial, solo has tenido {counter} intentos")
-elif counter > 10 and difficulty == 2:
-    print(f"{counter} intentos, mmm, juega a otra cosa")
+    if counter < 5 and difficulty == 2:
+        print(f"Genial, solo has tenido {counter} intentos")
+    else:
+        print(f"{counter} intentos, mmm, juega a otra cosa")
 
-elif counter == 1 and difficulty == 3:
+if counter == 1 and difficulty == 3:
     print("WHAAAAAAAAAAAAAAT!")
-elif counter < 10 and difficulty == 3:
-    print(f"Genial, solo has tenido {counter} intentos")
-elif counter > 20 and difficulty == 3:
-    print(f"{counter} intentos, mmm, juega a otra cosa")
+    if counter < 10 and difficulty == 3:
+        print(f"Genial, solo has tenido {counter} intentos")
+    else:
+        print(f"{counter} intentos, mmm, juega a otra cosa")
 
-elif counter == 1 and difficulty == 4:
+if counter == 1 and difficulty == 4:
     print("IMPOSSIBLE!!! (Las probabilidades de que este mensaje aparezca son 1 en 1.000.000)")
-elif counter < 100 and difficulty == 4:
-    print(f"Genial, solo has tenido {counter} intentos")
-elif counter > 100 and difficulty == 4:
-    print(f"{counter} intentos, no tienes nada mejor que hacer?")
+    if counter < 100 and difficulty == 4:
+        print(f"Genial, solo has tenido {counter} intentos")
+    else:
+        print(f"{counter} intentos, no tienes nada mejor que hacer?")
